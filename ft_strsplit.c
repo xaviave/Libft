@@ -14,24 +14,30 @@
 
 char			**ft_strsplit(char const *s, char c)
 {
+	size_t		k;
 	size_t		j;
 	size_t		i;
 	char		**res;
 
-	i = ft_count_words(s, c);
-	if (!(s && (res = (char **)malloc(sizeof(*res) * (i + 1)))))
+	if (!(s && c))
 		return (NULL);
+	i = 0;
 	j = 0;
-	while (*s && i != 0)
+	if (!(ret = ft_memalloc(ft_strlen(s) + 1)))
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		while (*s == c)
-			s++;
-		if (*s != c && *s != '\0')
-			res[j++] = ft_strdup(s);
-		while (*s != c)
-			s++;
-		i--;
+		if (s[i] == c)
+			i++;
+		else
+		{
+			k = 0;
+			while (s[i + k] != '\0' && s[i + k] != c)
+				k++;
+			ret[j++] = ft_strsub(s, i, k);
+			i += k;
+		}
 	}
-	res[ft_count_words(s, c)] = 0;
+	ret[j] = 0;
 	return (res);
 }

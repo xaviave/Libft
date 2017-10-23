@@ -23,7 +23,6 @@ OBJ=\
 $(NAME):
 	@gcc -c -Wall -Wextra -Werror $(SRCS)
 	@ar rc $(NAME) $(OBJ)
-	@rm -f $(OBJ)
 
 all: $(NAME)
 
