@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/07 18:16:10 by xamartin          #+#    #+#             */
+/*   Updated: 2017/11/09 14:37:21 by xamartin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_header.h"
+
 void	ft_putnbr(int n)
 {
 	long	nb;
@@ -5,7 +19,7 @@ void	ft_putnbr(int n)
 	nb = n;
 	if (nb < 0)
 	{
-		write(1, '-', 1);
+		ft_putchar('-');
 		nb = -nb;
 	}
 	if (nb > 9)
@@ -14,5 +28,5 @@ void	ft_putnbr(int n)
 		ft_putnbr(nb % 10);
 	}
 	else
-		write(1, (nb + 48), 1);
+		ft_putchar(nb + 48);
 }

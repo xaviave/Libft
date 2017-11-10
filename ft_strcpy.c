@@ -1,6 +1,20 @@
-char	*ft_strcpy(char *dest, const char *src)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/07 18:22:29 by xamartin          #+#    #+#             */
+/*   Updated: 2017/11/09 18:42:50 by xamartin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_header.h"
+
+char		*ft_strcpy(char *dest, const char *src)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (src[i] != '\0')
@@ -8,5 +22,6 @@ char	*ft_strcpy(char *dest, const char *src)
 		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
 	return (dest);
 }

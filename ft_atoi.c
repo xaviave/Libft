@@ -1,8 +1,22 @@
-int	ft_atoi(const char *nptr)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/07 18:12:05 by xamartin          #+#    #+#             */
+/*   Updated: 2017/11/09 14:58:27 by xamartin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_header.h"
+
+int			ft_atoi(const char *nptr)
 {
-	int	i;
+	size_t	i;
 	char	n;
-	int	out;
+	size_t	out;
 
 	i = 0;
 	out = 0;
@@ -10,12 +24,12 @@ int	ft_atoi(const char *nptr)
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 		n = nptr[i++];
-	if (nptr[i] == '+')
-		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		out = out * 10 + nptr[i] - 48;
 		i++;
 	}
+	if (n == '-')
+		out = -out;
 	return (out);
 }

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:32:19 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 17:49:49 by xamartin         ###   ########.fr       */
+/*   Created: 2017/11/09 18:26:02 by xamartin          #+#    #+#             */
+/*   Updated: 2017/11/10 13:43:40 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-char    *ft_strjoin(char const *s1, char const *s2)
+int				ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char    *tab;
-	int      i;
+	unsigned char	str1;
+	unsigned char	str2;
 
-	i = (ft_strlen(s1) + ft_strlen(s2));
-	if (!(tab = (char *)malloc(sizeof(*tab) * (i + 1))))
-		return (NULL);
-	tab = ft_strcat((char*)s1, (char*)s2);
-	return (tab);
+	while (n--)
+	{
+		str1 = (unsigned char)s1;
+		str2 = (unsigned char)s2;
+		if (str1 != str2)
+			return (str1 - str2);
+		s1++;
+		s2++;
+	}
+	return (0);
 }
