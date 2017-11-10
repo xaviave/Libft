@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 11:42:01 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/10 09:51:29 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/10 18:40:57 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,16 @@
 char		*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t	i;
+	size_t	j;
 
+	j = 0;
 	i = ft_strlen(s1);
-	ft_strncpy(&s1[i], s2, n);
+	while (s2[j] && j < n)
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
 	return (s1);
 }

@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 17:19:56 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 19:47:10 by xamartin         ###   ########.fr       */
+/*   Created: 2017/11/10 16:29:34 by xamartin          #+#    #+#             */
+/*   Updated: 2017/11/10 17:10:44 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_header.h"
 
-int			ft_count_word(char const *str, char c)
+size_t		ft_count_words(const char *str, char c)
 {
 	size_t	i;
-	int		word;
+	size_t	word;
 
 	i = 0;
 	word = 0;
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		while (str[i] == c)
 			i++;
@@ -29,32 +29,27 @@ int			ft_count_word(char const *str, char c)
 			while (str[i] != c)
 				i++;
 		}
-		i++;
 	}
 	return (word);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	char	**tab;
+	size_t		j;
+	char	**res;
 
-	j = ft_count_word(s, c);
-	i = 0;
-	k = 0;
-	if (!(tab = (char **)malloc(sizeof(char *) * (j + 1))))
+	if (!(res = (char **)malloc(sizeof(*res) * (ft_count_words(s, c) + 1))))
 		return (NULL);
-	while (s[i] != '\0')
+	j = -1;
+	while (*s)
 	{
-		while (s[i] != c)
-			i++;
-		if (s[i] != c)
-			tab[k++] = ft_strdup(s);
-		while (s[i] != c)
-			i++;
+		while (*s == c)
+			s++;
+		if (*s != c )
+			res[++j] = ft_strdup(s);
+		while (*s != c)
+			s++;
 	}
-	tab[j] = 0;
-	return (tab);
+	res[ft_count_words(s, c)] = 0;
+	return (res);
 }
