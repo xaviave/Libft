@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:46:02 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 10:17:36 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 15:55:50 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ void		ft_putstr_fd(char const *s, int fd)
 {
 	size_t	i;
 
-	i = ft_strlen(s);
-	write (fd, s, i);
+	if (s)
+	{
+		i = ft_strlen(s);
+		write (fd, s, i);
+	}
 }

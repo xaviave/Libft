@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:44:59 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 10:17:00 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 15:56:42 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void		ft_putendl_fd(char const *s, int fd)
 {
 	size_t	i;
 
-	i = ft_strlen(s);
-	write(fd, s, i);
-	write(fd, "\n", 1);
+	if (s)
+	{
+		i = ft_strlen(s);
+		write(fd, s, i);
+		write(fd, "\n", 1);
+	}
 }

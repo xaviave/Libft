@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:16:28 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 10:17:29 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 15:55:25 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	ft_putstr(char const *s)
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
-		ft_putchar(s[i++]);
+	if (s)
+	{
+		while (s[i] != '\0')
+			ft_putchar(s[i++]);
+	}
 }
