@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:13:56 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/09 14:33:57 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:14:00 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 int		ft_isdigit(int c)
 {

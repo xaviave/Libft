@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:45:25 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/09 13:38:32 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:17:20 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void		ft_putnbr_fd(int n, int fd)
 {

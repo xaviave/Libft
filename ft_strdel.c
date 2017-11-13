@@ -6,15 +6,17 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:40:54 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 19:24:56 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:51:47 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {
-	if (*as)
+	if (as)
+	{
 		free(*as);
-	*as = NULL;
+		*as = NULL;
+	}
 }

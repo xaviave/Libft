@@ -6,52 +6,40 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:41:55 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/10 15:55:31 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 15:50:46 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
-
-size_t		ft_count(int n, size_t i)
-{
-	if (n < 0)
-	{
-		n = -n;
-		i++;
-	}
-	if (n > 9)
-		ft_count((n / 10), (i + 1));
-	else
-		return (i);
-	return (0);
-}
-
-char		*ft_rec(int n, size_t i, char *str)
-{
-	if (n < 0)
-	{
-		str[i] = '-';
-		i++;
-	}
-	if (n > 9)
-	{
-		ft_rec((n / 10) , (i + 1), str);
-		ft_rec((n % 10) , (i + 1), str);
-	}
-	if (n < 9)
-		str[i] = n + 48;
-	return (str);
-}
+#include "libft.h"
 
 char		*ft_itoa(int n)
 {
+	char	mem;
 	char	*str;
 	size_t	i;
+	int		j;
 
 	i = 0;
-	i = ft_count(n, i);
-	str = ft_strnew(i);
-	ft_rec(n, i, str);
-	str[i + 1] = '\0';
+	j = n;
+	if (n < 0)
+	{
+		mem = '-';
+		j = -j;
+		n = -n;
+	}
+	else
+		mem = '+';
+	while (j /= 10)
+		i++;
+	(mem == '-') ? i++ : 0;
+	if (!(str = (char *)malloc(sizeof(char) * i)))
+		return (NULL);
+	str[i--] = '\0';
+	while (i--)
+	{
+		str[i] = (n % 10) + 48;
+		n = n / 10;
+	}
+	(mem == '-') ? str[0] = '-' : 0;
 	return (str);
 }

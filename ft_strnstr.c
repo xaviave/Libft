@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:01:55 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/10 17:38:08 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:35:57 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -24,18 +24,18 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (ft_strlen(needle) == 0)
 		return ((char *)haystack);
 	if (k == 0)		
-		return (0);
+		return (NULL);
 	while (haystack[i] && i < len)
 	{
-		while (haystack[i + j] == needle[j])
+		while (haystack[i + j] == needle[j] && (i + j) < len)
 		{
-			if (j == k - 1)
+			if (!needle[j + 1])
 				return ((char *)&haystack[i]);
 			j++;
 		}
 		j = 0;
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 

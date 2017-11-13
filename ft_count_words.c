@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 10:44:39 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 10:17:51 by xamartin         ###   ########.fr       */
+/*   Created: 2017/11/13 13:39:16 by xamartin          #+#    #+#             */
+/*   Updated: 2017/11/13 13:40:31 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+size_t          ft_count_words(const char *str, char c)
 {
-	size_t	i;
+	size_t      i;
+	size_t      word;
 
-	i = ft_strlen(s);
-	if (c == 0)
-		return ((char *)&s[i]);
-	if (i != 0)
+	i = 0;
+	word = 0;
+	while (str[i])
 	{
-		while (i-- != 0)
+		while (str[i] == c)
+			i++;
+		if (str[i] != c)
 		{
-			if (*s++ == (char)c)
-				return ((char *)(s - 1));
+			word++;
+			while (str[i] != c)
+				i++;
 		}
 	}
-	return (NULL);
+	return (word);
 }

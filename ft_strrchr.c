@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:45:01 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 17:52:25 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:20:27 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 char		*ft_strrchr(const char *s, int c)
 {

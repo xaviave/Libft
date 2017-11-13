@@ -6,13 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:02:22 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/10 19:06:11 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:25:29 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
-
-#include <stdio.h>
+#include "libft.h"
 
 char		*ft_strstr(const char *haystack, const char *needle)
 {
@@ -31,8 +29,8 @@ char		*ft_strstr(const char *haystack, const char *needle)
 	{
 		while (haystack[i + j] == needle[j])
 		{
-			if (j == k - 1)
-				return ((char *)haystack + i);
+			if (!needle[j + 1])
+				return ((char *)&haystack[i]);
 			j++;
 		}
 		j = 0;

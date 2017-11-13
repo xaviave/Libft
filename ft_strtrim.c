@@ -6,45 +6,32 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 15:24:59 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 20:02:19 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 13:28:22 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
-
-int			ft_debut(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
-		i++;
-	return (i);
-}
-
-int			ft_fin(const char *s)
-{
-	size_t	i;
-
-	i = ft_strlen(s);
-	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
-		i--;
-	return (i);
-}
+#include "libft.h"
 
 char		*ft_strtrim(char const *s)
 {
 	char	*str;
 	size_t	i;
+	size_t	j;
 
-	i = ft_strlen(s);
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+	i = 0;
+	if (!s)
 		return (NULL);
-	i = ft_debut(s);
-	while (s[i] != '\0' && i < (size_t)ft_fin(s))
-	{
-		str[i] = s[i];
+	while ((s[i] == '\t' || s[i] == '\n' || s[i] == ' ') && s[i])
 		i++;
+	j = ft_strlen(s) - 1;
+	while ((s[j] == '\t' || s[j] == '\n' || s[j] == ' ') && s[j])
+		j--;
+	if (s[i] == '\0')
+	{
+		str = ft_strnew(1);
+		return (str);
 	}
+	j = j - i + 1;
+	str = ft_strsub(s, i, j);
 	return (str);
 }

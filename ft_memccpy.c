@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:15:29 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 18:42:19 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:14:41 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

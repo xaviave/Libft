@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:14:26 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 17:44:29 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:15:43 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void	ft_putchar(char c)
 {

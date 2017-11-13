@@ -6,49 +6,31 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 16:29:34 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/10 17:10:44 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 13:49:43 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
-
-size_t		ft_count_words(const char *str, char c)
-{
-	size_t	i;
-	size_t	word;
-
-	i = 0;
-	word = 0;
-	while (str[i])
-	{
-		while (str[i] == c)
-			i++;
-		if (str[i] != c)
-		{
-			word++;
-			while (str[i] != c)
-				i++;
-		}
-	}
-	return (word);
-}
+#include "libft.h"
 
 char			**ft_strsplit(char const *s, char c)
 {
 	size_t		j;
-	char	**res;
+	size_t		i;
+	char		**res;
 
-	if (!(res = (char **)malloc(sizeof(*res) * (ft_count_words(s, c) + 1))))
+	i = ft_count_words(s, c);
+	if (!(s && (res = (char **)malloc(sizeof(*res) * (i + 1)))))
 		return (NULL);
-	j = -1;
-	while (*s)
+	j = 0;
+	while (*s && i != 0)
 	{
 		while (*s == c)
 			s++;
-		if (*s != c )
-			res[++j] = ft_strdup(s);
+		if (*s != c && *s != '\0')
+			res[j++] = ft_strdup(s);
 		while (*s != c)
 			s++;
+		i--;
 	}
 	res[ft_count_words(s, c)] = 0;
 	return (res);

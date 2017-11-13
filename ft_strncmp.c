@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:58:17 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/09 21:05:32 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:19:46 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 int			ft_strncmp(char const *s1, char const *s2, size_t n)
 {

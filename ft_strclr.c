@@ -6,17 +6,20 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:47:13 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/10 16:04:53 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:48:57 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void		ft_strclr(char *s)
 {
-	while (*s != '\0')
+	if (s)
 	{
-		*s = '\0';
-		s++;
+		while (*s != '\0')
+		{
+			*s = '\0';
+			s++;
+		}
 	}
 }

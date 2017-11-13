@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:29:10 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/09 18:34:55 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:21:05 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 int		ft_tolower(int c)
 {

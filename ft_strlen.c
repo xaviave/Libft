@@ -6,11 +6,11 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:09:02 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/10 10:46:44 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:19:12 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 size_t		ft_strlen(const char *s)
 {

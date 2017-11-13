@@ -6,20 +6,23 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:52:41 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/08 18:40:35 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/13 10:55:11 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
 void		ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (s)
 	{
-		f((unsigned int)i, &s[i]);
-		i++;
+		while (s[i] != '\0')
+		{
+			f((unsigned int)i, &s[i]);
+			i++;
+		}
 	}
 }
