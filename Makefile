@@ -6,7 +6,7 @@
 #    By: xamartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:27:12 by xamartin          #+#    #+#              #
-#    Updated: 2017/11/14 23:05:02 by xamartin         ###   ########.fr        #
+#    Updated: 2017/11/15 10:09:28 by xamartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,14 +88,11 @@ CFLAGS += -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME):
 	@$(CC) -c $(CFLAGS) -I $(INC_DIR) $(SRCS)
 	@ar rc $(NAME) $(OBJS) $(NAME)
 	@ranlib $(NAME)
 	@rm -f *.o
-
-$(OBJS):
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $(SRCS)
 
 clean:
 	@rm -f $(OBJ)
