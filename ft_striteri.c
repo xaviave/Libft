@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:52:41 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 10:55:11 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/16 10:56:25 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char *))
 	size_t	i;
 
 	i = 0;
-	if (s)
+	if (s && f)
 	{
 		while (s[i] != '\0')
 		{

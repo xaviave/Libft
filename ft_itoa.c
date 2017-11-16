@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:41:55 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 16:13:11 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/14 12:18:47 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void		ft_is_negative(int *n, int *negative)
 {
-	if (*n 	< 0)
+	if (*n < 0)
 	{
 		*n *= -1;
 		*negative = 1;

@@ -6,15 +6,15 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:32:19 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 11:15:20 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/14 09:34:42 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
-	char    *tab;
+	char	*tab;
 	size_t	i;
 
 	if (s1 && s2)

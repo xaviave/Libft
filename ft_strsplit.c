@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 16:29:34 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 13:49:43 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/14 12:16:17 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ char			**ft_strsplit(char const *s, char c)
 	size_t		k;
 	size_t		j;
 	size_t		i;
-	char		**res;
+	char		**ret;
 
-	if (!(s && c))
-		return (NULL);
 	i = 0;
 	j = 0;
-	if (!(ret = ft_memalloc(ft_strlen(s) + 1)))
+	if (!s || !c || !(ret = (char **)ft_memalloc(sizeof(char *) *
+					(ft_strlen(s) + 1))))
 		return (NULL);
 	while (s[i] != '\0')
 	{
@@ -39,5 +38,5 @@ char			**ft_strsplit(char const *s, char c)
 		}
 	}
 	ret[j] = 0;
-	return (res);
+	return (ret);
 }

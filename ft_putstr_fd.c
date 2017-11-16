@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 17:46:02 by xamartin          #+#    #+#             */
-/*   Updated: 2017/11/13 15:55:50 by xamartin         ###   ########.fr       */
+/*   Updated: 2017/11/14 12:17:12 by xamartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void		ft_putstr_fd(char const *s, int fd)
 	if (s)
 	{
 		i = ft_strlen(s);
-		write (fd, s, i);
+		write(fd, s, i);
 	}
 }

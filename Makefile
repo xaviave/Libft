@@ -6,16 +6,13 @@
 #    By: xamartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:27:12 by xamartin          #+#    #+#              #
-#    Updated: 2017/11/15 10:09:28 by xamartin         ###   ########.fr        #
+#    Updated: 2017/11/16 12:03:22 by xamartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = libft.a
-
-SRCS_DIR = ./srcs
-INC_DIR = ./includes
 
 RAW_SRCS=\
 		 ft_atoi.c\
@@ -81,21 +78,18 @@ RAW_SRCS=\
 
 OBJS = $(RAW_SRCS:.c=.o)
 
-SRCS = $(addprefix $(SRCS_DIR)/,$(RAW_SRCS))
-
 CC = gcc
 CFLAGS += -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME):
-	@$(CC) -c $(CFLAGS) -I $(INC_DIR) $(SRCS)
+	@$(CC) -c $(CFLAGS) -I libft.h $(RAW_SRCS)
 	@ar rc $(NAME) $(OBJS) $(NAME)
 	@ranlib $(NAME)
-	@rm -f *.o
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJS)
 
 fclean: clean
 	@rm -f $(NAME)
