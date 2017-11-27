@@ -1,13 +1,14 @@
 # **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: xamartin <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/11/07 16:27:12 by xamartin          #+#    #+#              #
-#    Updated: 2017/11/16 12:03:22 by xamartin         ###   ########.fr        #
-#                                                                              #
+#                                                           LE - /             #
+#                                                               /              #
+#    Makefile                                         .::    .:/ .      .::    #
+#                                                  +:+:+   +:    +:  +:+:+     #
+#    By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+      #
+#                                                  #+#   #+    #+    #+#       #
+#    Created: 2017/11/27 16:29:55 by xamartin     #+#   ##    ##    #+#        #
+#    Updated: 2017/11/27 16:29:59 by xamartin    ###    #+. /#+    ###.fr      #
+#                                                          /                   #
+#                                                         /                    #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
@@ -74,7 +75,11 @@ RAW_SRCS=\
 		 ft_strlen.c\
 		 ft_lstmap.c\
 		 ft_putstr.c\
-		 ft_strmap.c
+		 ft_strmap.c\
+		 ft_strlowcase.c\
+		 ft_strupcase.c\
+		 ft_strcapitalize.c\
+		 ft_strrev.c
 
 OBJS = $(RAW_SRCS:.c=.o)
 

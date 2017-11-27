@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strncpy.c                                     .::    .:/ .      .::   */
+/*   ft_strrev.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/27 16:31:16 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/27 16:31:16 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/11/27 16:31:17 by xamartin     #+#   ##    ##    #+#       */
+/*   Updated: 2017/11/27 16:31:17 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+char		*ft_strrev(char *str)
 {
 	size_t	i;
+	size_t	a;
+	int		c;
 
 	i = 0;
-	if (len == 0)
-		return (dst);
-	while (src[i] != '\0' && i < len)
-	{
-		dst[i] = src[i];
+	a = 0;
+	while (str[i])
 		i++;
-	}
-	while (i < len)
+	i -= 1;
+	while (i > a)
 	{
-		dst[i] = '\0';
-		i++;
+		c = str[i];
+		str[i] = str[a];
+		str[a] = c;
+		i--;
+		a++;
 	}
-	return (dst);
+	return (str);
 }

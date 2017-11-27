@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strncpy.c                                     .::    .:/ .      .::   */
+/*   ft_strlowcase.c                                  .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/27 16:31:16 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/27 16:31:16 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Created: 2017/11/27 16:30:56 by xamartin     #+#   ##    ##    #+#       */
+/*   Updated: 2017/11/27 16:30:56 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
+char		*ft_strlowcase(char *str)
 {
 	size_t	i;
 
 	i = 0;
-	if (len == 0)
-		return (dst);
-	while (src[i] != '\0' && i < len)
+	while (str[i] != '\0')
 	{
-		dst[i] = src[i];
+		if (str[i] > 64 && str[i] < 91)
+			str[i] += 32;
 		i++;
 	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
-	return (dst);
+	return (str);
 }
