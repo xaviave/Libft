@@ -6,7 +6,7 @@
 #    By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2017/11/27 16:29:55 by xamartin     #+#   ##    ##    #+#        #
-#    Updated: 2017/11/27 16:29:59 by xamartin    ###    #+. /#+    ###.fr      #
+#    Updated: 2017/12/16 16:52:48 by xamartin    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -79,7 +79,8 @@ RAW_SRCS=\
 		 ft_strlowcase.c\
 		 ft_strupcase.c\
 		 ft_strcapitalize.c\
-		 ft_strrev.c
+		 ft_strrev.c\
+		 get_next_line.c
 
 OBJS = $(RAW_SRCS:.c=.o)
 

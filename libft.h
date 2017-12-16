@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/27 16:32:24 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/27 16:32:28 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/16 16:51:32 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,6 +17,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+
+# define BUFF_SIZE 32
 
 typedef struct		s_list
 {
@@ -91,5 +94,6 @@ char				*ft_strlowcase(char *str);
 char				*ft_strupcase(char *str);
 char				*ft_strcapitalize(char *str);
 char				*ft_strrev(char *str);
+int					get_net_line(const int fd, char **line);
 
 #endif
