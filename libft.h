@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/27 16:32:24 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/16 16:51:32 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Updated: 2017/12/17 19:28:17 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -94,6 +94,18 @@ char				*ft_strlowcase(char *str);
 char				*ft_strupcase(char *str);
 char				*ft_strcapitalize(char *str);
 char				*ft_strrev(char *str);
-int					get_net_line(const int fd, char **line);
+int					get_next_line(const int fd, char **line);
+
+# define GRN		"\e[32m"
+# define MAG		"\e[35m"
+# define CYN		"\e[36m"
+# define GREY		"\e[90m"
+# define ORANGE		"\e[38;5;208m"
+# define RED		"\e[38;5;196m"
+# define YEL		"\e[38;5;11m"
+# define BLUE		"\e[38;5;4m"
+# define DBLUE		"\e[38;5;21m"
+# define PINK		"\e[38;5;13m"
+# define RESET		"\e[0m"
 
 #endif
