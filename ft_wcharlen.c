@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strjoin.c                                     .::    .:/ .      .::   */
+/*   ft_wcharlen.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/27 16:30:56 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/23 11:15:21 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/01/31 13:00:41 by xamartin     #+#   ##    ##    #+#       */
+/*   Updated: 2018/01/31 13:09:08 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+size_t		ft_wcharlen(wchar_t c)
 {
-	char	*tab;
-	size_t	i;
-
-	if (s1 && s2)
-	{
-		i = ft_strlen(s1) + ft_strlen(s2);
-		if ((tab = ft_strnew(i)) == NULL)
-			return (NULL);
-		ft_strcpy(tab, s1);
-		ft_strcat(tab, s2);
-		return (tab);
-	}
-	return (NULL);
+	if (c <= 0x7F)
+		return (1);
+	else if (c <= 0x7FF)
+		return (2);
+	else if (c <= 0xFFFF)
+		return (3);
+	else if (c <= 0x10FFFF)
+		return (4);
+	return (0);
 }

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strjoin.c                                     .::    .:/ .      .::   */
+/*   ft_wstrlen.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2017/11/27 16:30:56 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/23 11:15:21 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/01/31 12:50:38 by xamartin     #+#   ##    ##    #+#       */
+/*   Updated: 2018/01/31 13:31:27 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+size_t		ft_wstrlen(wchar_t *wstr)
 {
-	char	*tab;
+	size_t	count;
 	size_t	i;
 
-	if (s1 && s2)
-	{
-		i = ft_strlen(s1) + ft_strlen(s2);
-		if ((tab = ft_strnew(i)) == NULL)
-			return (NULL);
-		ft_strcpy(tab, s1);
-		ft_strcat(tab, s2);
-		return (tab);
-	}
-	return (NULL);
+	count = 0;
+	i = 0;
+	while (wstr[i])
+		i++;
+	return (i);
 }

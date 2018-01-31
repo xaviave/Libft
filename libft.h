@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/27 16:32:24 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2017/12/17 19:28:17 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/01/31 13:33:30 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 1
 
 typedef struct		s_list
 {
@@ -72,8 +72,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
-char				*ft_itoa(int n);
-char				*ft_itoa(int n);
+char				*ft_itoa(long n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -95,6 +94,14 @@ char				*ft_strupcase(char *str);
 char				*ft_strcapitalize(char *str);
 char				*ft_strrev(char *str);
 int					get_next_line(const int fd, char **line);
+char				*ft_itoa_base(long nu, int base);
+char				*ft_luitoa_base(unsigned long nu, int base);
+size_t				ft_putwchar(wchar_t c);
+size_t				ft_putwstr(wchar_t *wstr);
+size_t				ft_wstrlen(wchar_t *wstr);
+size_t				ft_wcharlen(wchar_t c);
+char				*ft_strjoinf1(char *s1, const char *s2);
+char				*ft_strjoinf2(const char *s1, char *s2);
 
 # define GRN		"\e[32m"
 # define MAG		"\e[35m"

@@ -6,7 +6,7 @@
 #    By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2017/11/27 16:29:55 by xamartin     #+#   ##    ##    #+#        #
-#    Updated: 2017/12/16 16:52:48 by xamartin    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/01/05 18:30:17 by xamartin    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -14,6 +14,8 @@
 .PHONY: all, clean, fclean, re
 
 NAME = libft.a
+
+INC = libft.h
 
 RAW_SRCS=\
 		 ft_atoi.c\
@@ -80,7 +82,8 @@ RAW_SRCS=\
 		 ft_strupcase.c\
 		 ft_strcapitalize.c\
 		 ft_strrev.c\
-		 get_next_line.c
+		 get_next_line.c\
+		 ft_itoa_base.c
 
 OBJS = $(RAW_SRCS:.c=.o)
 
@@ -89,9 +92,11 @@ CFLAGS += -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME):
-	@$(CC) -c $(CFLAGS) -I libft.h $(RAW_SRCS)
-	@ar rc $(NAME) $(OBJS) $(NAME)
+%.o: %.c
+	@$(CC) $(CFLAG) -c $^ -o $@ -I $(INC)
+
+$(NAME): $(OBJS)
+	@ar -rc $(NAME) $(OBJS) $@ $^
 	@ranlib $(NAME)
 
 clean:
