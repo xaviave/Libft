@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/01/31 12:50:38 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/31 13:31:27 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/01/31 15:34:33 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,10 +15,8 @@
 
 size_t		ft_wstrlen(wchar_t *wstr)
 {
-	size_t	count;
 	size_t	i;
 
-	count = 0;
 	i = 0;
 	while (wstr[i])
 		i++;

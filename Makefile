@@ -6,7 +6,7 @@
 #    By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2017/11/27 16:29:55 by xamartin     #+#   ##    ##    #+#        #
-#    Updated: 2018/01/05 18:30:17 by xamartin    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/02/03 18:31:29 by xamartin    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -83,9 +83,28 @@ RAW_SRCS=\
 		 ft_strcapitalize.c\
 		 ft_strrev.c\
 		 get_next_line.c\
-		 ft_itoa_base.c
+		 ft_itoa_base.c\
+		 ft_luitoa_base.c\
+		 ft_putwchar.c\
+		 ft_putwstr.c\
+		 ft_wstrlen.c\
+		 ft_wcharlen.c\
+		 ft_strjoinf.c\
+		 ft_char.c\
+		 ft_hexnumber.c\
+		 ft_number.c\
+		 ft_printf.c\
+		 ft_unsnumber.c\
+		 option2.c\
+		 ft_hexap.c\
+		 ft_modulo.c\
+		 ft_octnumber.c\
+		 ft_string.c\
+		 option.c\
+		 parse.c\
 
 OBJS = $(RAW_SRCS:.c=.o)
+
 
 CC = gcc
 CFLAGS += -Wall -Wextra -Werror

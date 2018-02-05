@@ -6,14 +6,14 @@
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/27 16:30:53 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/27 16:30:53 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/01 15:44:30 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		ft_is_negative(int *n, int *negative)
+static void		ft_is_negative(long *n, int *negative)
 {
 	if (*n < 0)
 	{
@@ -22,9 +22,9 @@ static void		ft_is_negative(int *n, int *negative)
 	}
 }
 
-char			*ft_itoa(int n)
+char			*ft_itoa(long n)
 {
-	int			mem;
+	long		mem;
 	int			i;
 	int			neg;
 	char		*str;

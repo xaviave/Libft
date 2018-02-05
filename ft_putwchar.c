@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_putwstr.c                                     .::    .:/ .      .::   */
+/*   ft_putwchar.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/01/29 17:25:26 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/31 13:33:10 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/02/01 16:13:16 by xamartin     #+#   ##    ##    #+#       */
+/*   Updated: 2018/02/01 16:21:27 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_putwstr(wchar_t *wstr)
+size_t	ft_putwchar(wchar_t c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	len;
+	int	count;
 
-	i = 0;
-	j = 0;
-	len = ft_wstrlen(wstr);
-	while (len > 0)
+	count = 0;
+	if (++count && c <= 0x7F)
+		ft_putchar(c);
+	else if (++count && c <= 0x7FF)
 	{
-		i += ft_putwchar(wstr[j++]);
-		len--;
+		ft_putchar((c >> 6) | 0xC0);
+		ft_putchar((c & 0x3F) | 0x80);
 	}
-	return (i);
+	else if (++count && c <= 0xFFFF)
+	{
+		ft_putchar((c >> 12) | 0xE0);
+		ft_putchar(((c >> 6) & 0x3F) | 0x80);
+		ft_putchar((c & 0x3F) | 0x80);
+	}
+	else if (++count && c <= 0x10FFFF)
+	{
+		ft_putchar((c >> 18) | 0xF0);
+		ft_putchar(((c >> 12) & 0x3F) | 0x80);
+		ft_putchar(((c >> 6) & 0x3F) | 0x80);
+		ft_putchar((c & 0x3F) | 0x80);
+	}
+	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: xamartin <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/27 16:32:24 by xamartin     #+#   ##    ##    #+#       */
-/*   Updated: 2018/01/31 13:33:30 by xamartin    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/02/03 18:31:37 by xamartin    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,8 +18,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <wctype.h>
+# include <stdarg.h>
 
-# define BUFF_SIZE 1
+# define BUFF_SIZE 32
+
+
+/*
+**	libft source
+*/
 
 typedef struct		s_list
 {
@@ -27,6 +34,7 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
 
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -102,6 +110,55 @@ size_t				ft_wstrlen(wchar_t *wstr);
 size_t				ft_wcharlen(wchar_t c);
 char				*ft_strjoinf1(char *s1, const char *s2);
 char				*ft_strjoinf2(const char *s1, char *s2);
+
+
+/*
+ ** ft_printf source
+ */
+
+typedef struct		s_opt
+{
+	int				l;
+	int				h;
+	int				j;
+	int				z;
+	int				hashtag;
+	int				zero;
+	int				less;
+	int				plus;
+	int				blank;
+	int				accurancy;
+	int				min;
+	int				star;
+	int				ok;
+	size_t			letter;
+	char			point;
+	size_t			damn;
+}					t_opt;
+
+int					ft_printf(const char *restrict format, ...);
+size_t				ft_string(char *format, va_list ap);
+size_t				ft_hexap(char *format, va_list ap);
+size_t				ft_number(char *format, va_list ap);
+size_t				ft_octnumber(char *format, va_list ap);
+size_t				ft_unsnumber(char *format, va_list ap);
+size_t				ft_hexnumber(char *format, va_list ap);				
+size_t				ft_char(char *format, va_list ap);
+size_t				ft_modulo(char *format, va_list ap);
+int					parseall(char *format, t_opt *option, int ok);
+void				apoption(t_opt *option, char **str, long nu);
+size_t				basenumber(long nu, t_opt *option, int base);
+size_t				basenumber1(unsigned long nu, t_opt option, int base,
+		size_t letter);
+void				blank(char **str, t_opt *option, long nu);
+void				zero(char **str, int nu);
+char				*hashtag(char **str, t_opt *option);
+void				plus(char **str, long nu);
+
+
+/*
+**	colors
+*/
 
 # define GRN		"\e[32m"
 # define MAG		"\e[35m"
